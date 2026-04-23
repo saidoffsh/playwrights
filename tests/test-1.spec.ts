@@ -4,7 +4,10 @@ test.describe('test all base', () => {
     await page.goto('https://playwright.dev/');
   });
   test('test element view header', async ({ page }) => {
-    await expect(page.getByRole('link', { name: 'Playwright logo Playwright' })).toBeVisible();
+    test.step('chek logo name', async () => {
+      await expect(page.getByRole('link', { name: 'Playwright logo Playwright' })).toBeVisible();
+    });
+
     await expect(page.getByRole('link', { name: 'Docs' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'MCP', exact: true })).toBeVisible();
     await expect(page.getByRole('link', { name: 'CLI', exact: true })).toBeVisible();
